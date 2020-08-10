@@ -14,12 +14,18 @@ class SeleniumBase:
     def teardown(self):
         self.driver.quit()
 
+    def getUrl(self):
+        return self.driver.current_url
+
     def goto(self, url):
         self.driver.get(url)
 
+    def click(self, element):
+        element.click()
+
     def find(self, func, info):
         try:
-            func(info)
+            return func(info)
         except NoSuchElementException:
             self.teardown()
             raise NoSuchElementException("Could not find element '{}' through '{}'".format(info, str(func.__name__)))
@@ -35,3 +41,6 @@ class SeleniumBase:
 
     def elementById(self, id):
         return self.driver.find_element_by_id(id)
+
+    def elementByLinkText(self, linkText):
+        return self.driver.find_element_by_link_text(linkText)
