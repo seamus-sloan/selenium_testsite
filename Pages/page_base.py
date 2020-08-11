@@ -19,8 +19,5 @@ class PageBase(SeleniumBase):
             self.teardown()
             raise Exception("'{}' did not match expected '{}'".format(actual, expected))
 
-    def verifyUrlMatches(self, url, expected):
-        self.assertEqual(url, self.HOME + expected)
-
-    def verifyTextMatches(self, text, expected):
-        self.assertEqual(text, expected)
+    def verifyMatches(self, actual, expected):
+        self.assertEqual(actual, expected)

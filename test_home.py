@@ -1,4 +1,3 @@
-from selenium.webdriver.common.keys import Keys
 from Pages.page_base import PageBase
 
 
