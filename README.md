@@ -10,4 +10,6 @@
 
 `pytest test_home.py --browser=chrome` will execute the tests in test_home.py using chrome
 
-`pytest test_home.py --browser=chrome --verbose --tb=no` will execute the tests in test_home.py using chrome and list the tests as they are executed but will not output the entire pytest traceback messages for errors.
+`pytest test_home.py --browser=chrome --verbose --tb=no` will execute the tests in test_home.py using chrome. Will not output the entire pytest traceback messages for errors.
+
+`pytest --browser=chrome --verbose --tb=no` will execute all files marked with `test_*.py` using chrome. Will not output any traceback for errors. 
